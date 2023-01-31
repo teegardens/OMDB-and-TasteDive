@@ -1,7 +1,6 @@
 import json
 import requests
 
-# provides a movie (or bands, TV shows, etc.) as a query input
 def get_movies_from_tastedive(name_string):
     baseurl = 'https://tastedive.com/api/similar'
     params_diction = {}
@@ -22,7 +21,7 @@ def get_related_titles(lst_movie_titles):
         lst.extend(extract_movie_titles(get_movies_from_tastedive(movie)))
     return list(set(lst))
 
-# provides a movie title as a query input and get back data about the movie
+
 def get_movie_data(title_movie):
     baseurl = 'http://www.omdbapi.com/'
     params_dict = {}
@@ -52,4 +51,4 @@ def get_sorted_recommendations(list_movie_titles):
    
     return sorted_lst_movie
     
-get_sorted_recommendations(["Mean Girls", "Booksmart", "Tootsie"])
+get_sorted_recommendations(["The pale blue eye", "A knifes out mystery", "Sherlock Holmes"])
